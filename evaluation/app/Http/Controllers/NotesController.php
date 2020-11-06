@@ -57,7 +57,8 @@ class NotesController extends Controller
      */
     public function show($id)
     {
-        //
+        $notes = Notes::find($id);
+        return view('notes.show')->with('notes', $notes);
     }
 
     /**
@@ -68,7 +69,8 @@ class NotesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $notes = Notes::find($id);
+        return view('notes.edit')->with('notes', $notes);
     }
 
     /**
@@ -80,7 +82,17 @@ class NotesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+
+        $notes = Notes::find($id);
+        $notes->title = $request->input('title');
+        $notes->body = $request->input('body');
+        $notes->save();
+
+        return redirect('/notes')->with('success', 'Note Updated');
     }
 
     /**

@@ -9,7 +9,7 @@
                     <div class="col-md-4 col-sm-4">
                     </div>
                     <div class="col-md-8 col-sm-8">
-                        <h3>{{$note->title}}</h3>
+                        <h3><a href="/notes/{{$note->id}}">{{$note->title}}</a></h3>
                         <small>Written on {{$note->created_at}}</small>
                         <p>{{$note->body}}</p>
                     </div>
