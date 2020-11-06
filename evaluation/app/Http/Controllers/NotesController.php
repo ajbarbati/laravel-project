@@ -25,7 +25,7 @@ class NotesController extends Controller
      */
     public function create()
     {
-        //
+        return view('notes.create');
     }
 
     /**
@@ -36,8 +36,18 @@ class NotesController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+
+        $notes = new Notes();
+        $notes->title = $request->input('title');
+        $notes->body = $request->input('body');
+        $notes->save();
+
+        return redirect('/notes')->with('success', 'Note Created');
+}
 
     /**
      * Display the specified resource.

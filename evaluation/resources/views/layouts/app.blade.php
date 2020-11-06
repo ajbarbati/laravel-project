@@ -6,8 +6,8 @@
 
         <title>{{config('app.name', 'LAPP')}}</title>
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="{{asset('css/app.css')}}"> 
+        <!-- Fonts --> 
+        <link rel="stylesheet" href="{{asset('public/css/app.css')}}"> 
         {{-- <script type="text/javascript" src="{{ asset("js/app.js") }}"><script> --}}
     </head>
     <body >

@@ -17,9 +17,4 @@ use App\Http\Controllers\NotesController;
 Route::get('/', [PagesController::class, 'index']);
 Route::get('/about', [PagesController::class, 'about']);
 
-
-Route::get('/users/{id}/{name}', function($id, $name){
-    return 'This is user '.$name.' with an id of '.$id;
-});
-
 Route::resource('notes','App\Http\Controllers\NotesController');
