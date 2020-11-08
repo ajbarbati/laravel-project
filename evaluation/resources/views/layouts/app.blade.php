@@ -14,7 +14,7 @@
     </head>
     <body >
             @include('includes.nav')
-            <div class="container">
+            <div class="container p-5">
                 @yield('content')
             </div>
     </body>

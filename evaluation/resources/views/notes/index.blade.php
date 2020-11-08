@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>notes</h1>
+    <h1 class="mb-5">Notes</h1>
     @if(count($notes) > 0)
         @foreach($notes as $note)
-            <div class="well">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4">
-                    </div>
-                    <div class="col-md-8 col-sm-8">
-                        <h3><a href="/notes/{{$note->id}}">{{$note->title}}</a></h3>
-                        <small>Written on {{$note->created_at}}</small>
-                        <p>{{$note->body}}</p>
+            <div class="container">
+                <div class="card-deck">
+                    <div class="card mb-3">
+                        <h3 class="card-header"><a href="/notes/{{$note->id}}">{{$note->title}}</a></h3>
+                        <div class="card-body">
+                            <small>Written on {{$note->created_at}}</small>
+                            <p>{{$note->body}}</p>
+                        </div>
                     </div>
                 </div>
             </div>
